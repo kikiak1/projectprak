@@ -2,7 +2,7 @@
     <div class="col-md-12">
         <div class="box box-primary box-solid">
             <div class="box-header with-border">
-                <h3 class="box-title">Data Kategori</h3>
+                <h3 class="box-title">Data Departement</h3>
 
                 <div class="box-tools pull-right">
                     <button type="button" class="btn btn-primary btn-sm btn-flat" data-toggle="modal" data-target="#add">
@@ -25,19 +25,19 @@
                     <thead>
                         <tr>
                             <th width="80px">No</th>
-                            <th>Kategori</th>
+                            <th>Departement</th>
                             <th class="text-center" width="100px">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php $no = 1;
-                        foreach ($kategori as $key => $value) { ?>
+                        foreach ($dep as $key => $value) { ?>
                             <tr>
                                 <td><?= $no++; ?></td>
-                                <td><?= $value['nama_kategori']; ?></td>
+                                <td><?= $value['nama_dep']; ?></td>
                                 <td class="text-center">
-                                    <button class="btn btn-xs btn-warning" data-toggle="modal" data-target="#edit<?= $value['id_kategori']; ?>">Edit</button>
-                                    <button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#delete<?= $value['id_kategori']; ?>">Delete</button>
+                                    <button class="btn btn-xs btn-warning" data-toggle="modal" data-target="#edit<?= $value['id_dep']; ?>">Edit</button>
+                                    <button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#delete<?= $value['id_dep']; ?>">Delete</button>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -55,16 +55,16 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Tambah Kategori</h4>
+                <h4 class="modal-title">Tambah Departement</h4>
             </div>
             <div class="modal-body">
                 <?php
-                echo form_open('kategori/add')
+                echo form_open('dep/add')
                 ?>
 
                 <div class="form-group">
-                  <label>Kategori</label>
-                  <input name="nama_kategori" class="form-control" placeholder="Nama Kategori" required>
+                  <label>Departement</label>
+                  <input name="nama_dep" class="form-control" placeholder="Nama Departement" required>
                 </div>
 
             </div>
@@ -77,23 +77,23 @@
     </div>
 </div>
 
-<?php foreach ($kategori as $key => $value) { ?>
-    <div class="modal fade" id="edit<?= $value['id_kategori']; ?>">
+<?php foreach ($dep as $key => $value) { ?>
+    <div class="modal fade" id="edit<?= $value['id_dep']; ?>">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Edit Kategori</h4>
+                    <h4 class="modal-title">Edit Departement</h4>
                 </div>
                 <div class="modal-body">
                     <?php
-                    echo form_open('kategori/edit/' . $value['id_kategori'])
+                    echo form_open('dep/edit/' . $value['id_dep'])
                     ?>
 
                     <div class="form-group">
-                    <label>Kategori</label>
-                    <input name="nama_kategori" value="<?= $value['nama_kategori']; ?>" class="form-control" placeholder="Nama Kategori" required>
+                    <label>Departement</label>
+                    <input name="nama_dep" value="<?= $value['nama_dep']; ?>" class="form-control" placeholder="Nama Departement" required>
                     </div>
 
                 </div>
@@ -107,22 +107,22 @@
     </div>
 <?php } ?>
 
-<?php foreach ($kategori as $key => $value) { ?>
-    <div class="modal fade" id="delete<?= $value['id_kategori']; ?>">
+<?php foreach ($dep as $key => $value) { ?>
+    <div class="modal fade" id="delete<?= $value['id_dep']; ?>">
         <div class="modal-dialog modal-sm modal-danger">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Hapus Kategori</h4>
+                    <h4 class="modal-title">Hapus Departement</h4>
                 </div>
                 <div class="modal-body">
                     
-                    Apakah Anda Yakin Ingin Menghapus Kategori <?= $value['nama_kategori']; ?> ?
+                    Apakah Anda Yakin Ingin Menghapus Departement <?= $value['nama_dep']; ?> ?
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                    <a href="<?= base_url('kategori/delete/' . $value['id_kategori']) ?>" type="submit" class="btn btn-primary">Delete</a>
+                    <a href="<?= base_url('dep/delete/' . $value['id_dep']) ?>" type="submit" class="btn btn-primary">Delete</a>
                 </div>
                 
             </div>

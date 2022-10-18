@@ -3,7 +3,7 @@
           <ul class="nav navbar-nav">
             <li><a href="<?= base_url('home') ?>">Home</a></li>
             <li><a href="<?= base_url('kategori') ?>">Kategori</a></li>
-            <li><a href="<?= base_url('departemen') ?>">Departemen</a></li>
+            <li><a href="<?= base_url('dep') ?>">Departement</a></li>
             <li><a href="<?= base_url('arsip') ?>">Arsip</a></li>
             <li><a href="<?= base_url('user') ?>">User</a></li>
             
