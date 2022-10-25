@@ -52,12 +52,6 @@
                                     <a href="<?= base_url('arsip/viewpdf/' . $value['id_arsip']) ?>">
                                         <i class="fa fa-file-pdf-o fa-2x label-danger"></i></a><br>
                                     <?= number_format($value['ukuran_file'], 0) ?> Byte
-                                <!-- </td>
-                                <td class="text-center">
-
-                                    <a href="<?= base_url('user/edit/' . $value['id_arsip']) ?>" class="btn btn-xs btn-warning">Edit</a>
-                                    <button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#delete<?= $value['id_arsip']; ?>">Delete</button>
-                                </td> -->
                             </tr>
                         <?php } ?>
                     </tbody>
@@ -67,26 +61,3 @@
         </div>
     </div>
 </div>
-
-<?php foreach ($arsip as $key => $value) { ?>
-    <div class="modal fade" id="delete<?= $value['id_arsip']; ?>">
-        <div class="modal-dialog modal-sm modal-danger">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Hapus Arsip</h4>
-                </div>
-                <div class="modal-body">
-                    
-                Apakah Anda Yakin Ingin Menghapus Arsip <?= $value['nama_arsip']; ?> ?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                    <a href="<?= base_url('arsip/delete/' . $value['id_arsip']) ?>" type="submit" class="btn btn-primary">Delete</a>
-                </div>
-                <?php echo form_close() ?>
-            </div>
-        </div>
-    </div>
-<?php } ?>
