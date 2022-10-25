@@ -73,7 +73,7 @@ class Arsip extends BaseController
         ])) {
 
             //mengambil file arsip yang akan diupload di form
-            $file_arsip = $this->request->getFiles('file_arsip');
+            $file_arsip = $this->request->getFile('file_arsip');
             //merandom nama file arsip
             $nama_file = $file_arsip->getRandomName();
             //mengambil ukuran file
@@ -206,7 +206,7 @@ class Arsip extends BaseController
         }
     }
 
-    public function delet($id_arsip)
+    public function delete($id_arsip)
     {
         //menghapus file
         $arsip = $this->Model_arsip->detail_data($id_arsip);
