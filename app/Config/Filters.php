@@ -9,6 +9,9 @@ use CodeIgniter\Filters\Honeypot;
 use CodeIgniter\Filters\InvalidChars;
 use CodeIgniter\Filters\SecureHeaders;
 use App\Filters\Filter_auth;
+use App\Filters\No_auth;
+use App\Filters\Filter_Admin;
+use App\Filters\Filter_viewer;
 
 class Filters extends BaseConfig
 {
@@ -25,6 +28,9 @@ class Filters extends BaseConfig
         'Filter_auth'      => Filter_auth::class,
         'invalidchars'     => InvalidChars::class,
         'secureheaders'    => SecureHeaders::class,
+        'No_auth'          => No_auth::class,
+        'Filter_admin'     => Filter_admin::class,
+        'Filter_viewer'    => Filter_viewer::class,
     ];
 
     /**
@@ -35,21 +41,32 @@ class Filters extends BaseConfig
      */
     public $globals = [
         'before' => [
-            'Filter_auth' => ['except' => [
+            'Filter_admin' => ['except' => [
                 'auth', 'auth/*',
                 '/'
-            ]]
+            ]],
+            'Filter_viewer' => ['except' => [
+                'auth', 'auth/*',
+                '/'
+            ]],
             // 'honeypot',
             // 'csrf',
             // 'invalidchars',
         ],
         'after' => [
-            'Filter_auth' => ['except' => [
+            'Filter_admin' => ['except' => [
                 'home', 'home/*',
                 'kategori', 'kategori/*',
                 'dep', 'dep/*',
                 'arsip', 'arsip/*',
                 'user', 'user/*'
+            ]],
+            'Filter_viewer' => ['except' => [
+                'viewer', 'viewer/*',
+                'kategoriviewer', 'kategoriviewer/*',
+                'depviewer', 'depviewer/*',
+                'arsipviewer', 'arsipviewer/*',
+                'profile', 'profile/*'
             ]],
             'toolbar',
             // 'honeypot',
