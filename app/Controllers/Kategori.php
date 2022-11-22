@@ -9,6 +9,10 @@ class Kategori extends BaseController
 
     public function __construct() 
     {
+        if (session()->get('level') != "1") {
+            echo 'Access denied';
+            exit;
+        }
         $this->Model_kategori = new Model_kategori();
         helper('form');
     }

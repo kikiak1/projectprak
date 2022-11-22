@@ -30,6 +30,7 @@
                             <th>Password</th>
                             <th>Level</th>
                             <th>Departemen</th>
+                            <th>Foto</th>
                             <th width="100px">Aksi</th>
                         </tr>
                     </thead>
@@ -50,6 +51,7 @@
                                         echo 'User';
                                     } ?></td>
                                 <td><?= $value['nama_dep']; ?></td>
+                                <td><img src="<?= base_url('foto/' . $value['foto']) ?>" width="80px"></td>
                                 <td class="text-center">
                                     <a href="<?= base_url('user/edit/' . $value['id_user']) ?>" class=" btn btn-warning">Edit</a>
                                     <button class="btn btn-danger" data-toggle="modal" data-target="#delete<?= $value['id_user'] ?>">Delete</button>

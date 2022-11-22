@@ -9,6 +9,10 @@ class Dep extends BaseController
 
     public function __construct() 
     {
+        if (session()->get('level') != "1") {
+            echo 'Access denied';
+            exit;
+        }
         $this->Model_dep = new Model_dep();
         helper('form');
     }

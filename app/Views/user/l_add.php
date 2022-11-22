@@ -59,6 +59,11 @@
                 </div>
 
                 <div class="form-group">
+                    <label>Foto</label>
+                    <input accept="image/png, image/jpg, image/jpeg" type="file" name="foto" class="form-control">
+                </div>
+
+                <div class="form-group">
                     <button type="submit" class="btn btn-primary">Simpan</button>
                     <a href="<?= base_url('user') ?>" class="btn btn-default">Kembali</a>
                 </div>

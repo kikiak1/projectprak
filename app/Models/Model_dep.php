@@ -6,6 +6,9 @@ use CodeIgniter\Model;
 
 class Model_dep extends Model
 {
+    protected $table = "tbl_dep";
+    protected $allowedFields = ['nama_dep'];
+
     public function all_data()
     {
         return $this->db->table('tbl_dep')

@@ -62,6 +62,18 @@
                     </select>
                 </div>
 
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label>Foto User</label>
+                        <img src="<?= base_url('foto/' . $user['foto']) ?>" width="100px">
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="form-group">
+                            <label>Ganti Foto</label>
+                            <input accept="image/png, image/jpg, image/jpeg, image/gif" type="file" name="foto" class="form-control">
+                        </div>
+                    </div>
+                </div>
                 <div class="form-group">
                     <br>
                     <button type="submit" class="btn btn-primary">Update</button>

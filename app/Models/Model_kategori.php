@@ -6,6 +6,9 @@ use CodeIgniter\Model;
 
 class Model_kategori extends Model
 {
+    protected $table = "tbl_kategori";
+    protected $allowedFields = ['nama_kategori'];
+
     public function all_data()
     {
         return $this->db->table('tbl_kategori')

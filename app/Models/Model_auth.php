@@ -6,6 +6,9 @@ use CodeIgniter\Model;
 
 class Model_auth extends Model
 {
+    protected $table = "tbl_user";
+    protected $allowedFields = ['nama_user'];
+
     public function login($email,$password)
     {
         return $this->db->table('tbl_user')->where([
