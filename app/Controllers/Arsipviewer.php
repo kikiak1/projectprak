@@ -16,4 +16,19 @@ class Arsipviewer extends BaseController
             exit;
         }
     }
+    
+    public function viewpdf($id_arsip)
+    {
+        $arsip = $this->Model_arsip->where('id_arsip',$id_arsip)->first();
+        $departemen = $this->Model_dep->where('id_dep', $arsip['id_dep'])->first();
+        $auth = $this->Model_auth->where('id_user', $arsip['id_user'])->first();
+        $data = array(
+            'title' => 'View Arsip',
+            'arsip' => $arsip,
+            'isi'   => 'viewer/l_viewpdf',
+            'dep'   => $departemen,
+            'user'  => $auth
+        );
+        return view('viewer/layout/l_wrapper', $data);
+    }
 }
